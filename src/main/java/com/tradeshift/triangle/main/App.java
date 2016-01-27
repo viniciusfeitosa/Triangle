@@ -7,7 +7,7 @@ import java.util.Scanner;
 import javax.naming.directory.InvalidAttributesException;
 
 /**
- * 
+ *
  * @author Vinicius Pacheco
  *
  */
@@ -15,21 +15,21 @@ public class App {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws InvalidAttributesException {
 		System.out.println("Please enter the 3 sides values to determinate the triangle type");
-		System.out.print("Split values with comas:");
-		
-		Scanner scanner = new Scanner(System.in);		
+		System.out.print("Split values with commas:");
+
+		Scanner scanner = new Scanner(System.in);
 		if(!scanner.hasNext())
 			throw new InvalidAttributesException("Input can't be empty");
-		
+
 		List<String> sides = Arrays.asList(scanner.nextLine().split(","));
 		if(sides.size() != 3)
-			throw new InvalidAttributesException("Invalid input value");	
-		
+			throw new InvalidAttributesException("Invalid input value");
+
 		System.out.println(new TriangleType(App.sidesStringToLong(sides)).check());
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param  List<String> sides
 	 * @return int[]
 	 * @throws NumberFormatException
@@ -42,7 +42,7 @@ public class App {
 			}
 		} catch (NumberFormatException e) {
 			throw new NumberFormatException("Invalid number format to your input");
-		}		
+		}
 		return sidesLong;
 	}
 }
