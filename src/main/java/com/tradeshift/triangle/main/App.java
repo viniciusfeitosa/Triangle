@@ -25,7 +25,7 @@ public class App {
 		if(sides.size() != 3)
 			throw new InvalidAttributesException("Invalid input value");
 
-		System.out.println(new TriangleType(App.sidesStringToLong(sides)).check());
+		System.out.println(new TriangleType(App.sidesStringToInt(sides)).check());
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class App {
 	 * @return int[]
 	 * @throws NumberFormatException
 	 */
-	public static int[] sidesStringToLong(List<String> sides) throws NumberFormatException {
+	public static int[] sidesStringToInt(List<String> sides) throws NumberFormatException {
 		int[] sidesLong = new int[3];
 		try {
 			for (int i = 0; i < sides.size(); i++) {

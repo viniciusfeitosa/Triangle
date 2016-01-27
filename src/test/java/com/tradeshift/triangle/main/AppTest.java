@@ -15,7 +15,7 @@ import org.junit.rules.ExpectedException;
 public class AppTest {
 
 	private String[] array;
-	
+
 	@Rule
     public ExpectedException expectedException = ExpectedException.none();
 
@@ -26,7 +26,7 @@ public class AppTest {
 		System.setIn(generateInput(""));
 		App.main(array);
 	}
-	
+
 	@Test()
 	public void testInvalidValuesWithLetters() throws InvalidAttributesException {
 		expectedException.expect(NumberFormatException.class);
@@ -34,7 +34,7 @@ public class AppTest {
 		System.setIn(generateInput("a,a,a"));
 		App.main(array);
 	}
-	
+
 	@Test()
 	public void testInvalidSeparator() throws InvalidAttributesException {
 		expectedException.expect(InvalidAttributesException.class);
@@ -42,7 +42,7 @@ public class AppTest {
 		System.setIn(generateInput("5 5 5"));
 		App.main(array);
 	}
-	
+
 	@Test()
 	public void testInvalidNumberOfValues() throws InvalidAttributesException {
 		expectedException.expect(InvalidAttributesException.class);
@@ -50,20 +50,20 @@ public class AppTest {
 		System.setIn(generateInput("5,5"));
 		App.main(array);
 	}
-	
+
 	@Test()
-	public void testSidesStringToLong(){
+	public void testSidesStringToInt(){
 		int[] expectedSidesInLong = {5, 4, 3};
 		List<String> sides = new ArrayList<String>();
 		sides.add("5");
 		sides.add("4");
 		sides.add("3");
-		int[] sidesInLong = App.sidesStringToLong(sides);
+		int[] sidesInLong = App.sidesStringToInt(sides);
 		Assert.assertEquals(expectedSidesInLong[0], sidesInLong[0]);
 		Assert.assertEquals(expectedSidesInLong[1], sidesInLong[1]);
 		Assert.assertEquals(expectedSidesInLong[2], sidesInLong[2]);
 	}
-	
+
 	private InputStream generateInput(String input){
 		return new ByteArrayInputStream(input.getBytes());
 	}
