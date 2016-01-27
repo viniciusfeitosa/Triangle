@@ -1,7 +1,7 @@
-# Triangle
+# Triangle  [![Build Status](https://travis-ci.org/viniciusfeitosa/Triangle.svg?branch=master)](https://travis-ci.org/viniciusfeitosa/Triangle)
 
-This application is to detect the type of triangle. 
-The app use Java8, Maven and Junit 
+This application is to detect the type of triangle.
+The app use Java8, Maven and Junit
 
 ## Operation:
 
@@ -9,7 +9,7 @@ The app use Java8, Maven and Junit
 
 2. Input the value of triangle sides like ex: 2,3,4 (The values should be separated by commas)
 
-3. After that you will see the result. Throws errors if you input a wrong value. 
+3. After that you will see the result. Throws errors if you input a wrong value.
 
 ## Running:
 
@@ -23,6 +23,6 @@ make test
 
 make build
 
-### Step 3 (Run the application): 
+### Step 3 (Run the application):
 
 make run
